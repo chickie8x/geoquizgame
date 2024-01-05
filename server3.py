@@ -22,7 +22,6 @@ def handle_client(c_socket, addr):
     clients_list.append(client)
 
     c_socket.send((f'you UID is: {uid}').encode())
-    print(uid_list)
 
     while True:
         data = c_socket.recv(1024)
@@ -48,15 +47,15 @@ def send_broadcast(addr):
     broadcast_socket.bind(b_address)
     while True:
         message = bytes(addr, 'utf-8')
-        broadcast_socket.sendto(message, ('255.255.255.255', 12346))
+        broadcast_socket.sendto(message, ('255.255.255.255', 12349))
         time.sleep(4)
 
 # Set up the server socket
 server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-server_IP = 'localhost'
-server_port = 12345
+server_IP = '127.0.0.1'
+server_port = 12343
 server_socket.bind((server_IP, server_port))
-server_socket.listen(5)
+server_socket.listen()
 
 broadcast_server_addr = f"{server_IP} {server_port}" #server address is sent to clients via broadcast
 

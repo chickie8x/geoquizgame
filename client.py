@@ -12,7 +12,7 @@ def discover_hosts():
     client_socket.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
 
     # Bind to a specific address and port
-    client_socket.bind(('0.0.0.0', 12346))
+    client_socket.bind(('0.0.0.0', 12349))
 
     try:
         print("Listening for broadcasts...")
@@ -50,16 +50,6 @@ send_mes_thread = threading.Thread(target=send_message)
 send_mes_thread.start()
 
 while True:
-    # message = input("Enter a message to send to the server (type 'exit' to close): ")
-    
-    # if message.lower() == 'exit':
-    #     break
-    # try:
-    #     client_socket.send(message.encode())
-    # except:
-    #     print('can not send mesage to server')
-
-
     # Receive the response from the server
     response = client_socket.recv(1024)
     print(f"Received from server: {response.decode()}")
