@@ -56,6 +56,7 @@ server_IP = '127.0.0.1'
 server_port = 12344
 server_socket.bind((server_IP, server_port))
 server_socket.listen()
+print(type(server_socket))
 
 broadcast_server_addr = f"{server_IP} {server_port}" #server address is sent to clients via broadcast
 

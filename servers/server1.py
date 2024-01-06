@@ -21,7 +21,7 @@ def handle_client(c_socket, addr):
 
     clients_list.append(client)
 
-    c_socket.send((f'you UID is: {uid}').encode())
+    c_socket.send((f'you\'re connected').encode())
 
     while True:
         data = c_socket.recv(1024)

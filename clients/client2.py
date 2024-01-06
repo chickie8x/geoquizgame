@@ -12,7 +12,7 @@ def discover_hosts():
     client_socket.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
 
     # Bind to a specific address and port
-    client_socket.bind(('0.0.0.0', 12349))
+    client_socket.bind(('0.0.0.0', 12341))
 
     try:
         print("Listening for broadcasts...")
